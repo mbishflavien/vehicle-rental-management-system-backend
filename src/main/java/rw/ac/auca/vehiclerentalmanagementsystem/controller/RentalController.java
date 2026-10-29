@@ -5,6 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import rw.ac.auca.vehiclerentalmanagementsystem.domain.Rental;
+import rw.ac.auca.vehiclerentalmanagementsystem.domain.RentalStatus;
 import rw.ac.auca.vehiclerentalmanagementsystem.service.RentalService;
 
 import java.util.List;
@@ -65,5 +66,17 @@ public class RentalController {
         } else {
             return new ResponseEntity<>(returnedMessage, HttpStatus.CONFLICT);
         }
+    }
+
+    @GetMapping("/by-status")
+    public ResponseEntity<List<Rental>> getRentalsByStatus(@RequestParam RentalStatus status){
+        return new ResponseEntity<>(rentalService.getRentalsByStatus(status), HttpStatus.OK);
+    }
+
+    @GetMapping("/between")
+    public ResponseEntity<List<Rental>> getRentalsBetween(@RequestParam String start, @RequestParam String end){
+        java.time.LocalDate startDate = java.time.LocalDate.parse(start.trim());
+        java.time.LocalDate endDate = java.time.LocalDate.parse(end.trim());
+        return new ResponseEntity<>(rentalService.getRentalsBetween(startDate, endDate), HttpStatus.OK);
     }
 }

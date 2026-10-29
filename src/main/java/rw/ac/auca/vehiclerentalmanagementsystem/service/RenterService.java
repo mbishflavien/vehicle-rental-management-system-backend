@@ -100,4 +100,9 @@ public class RenterService {
         renterRepository.delete(existing.get());
         return "Renter deleted successfully";
     }
+
+    //B1
+    public List<Renter> getRentersByLastName(String lastName){
+        return renterRepository.findByLastNameIgnoreCaseOrderByFirstNameAsc(lastName);
+    }
 }

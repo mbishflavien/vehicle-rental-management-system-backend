@@ -75,4 +75,14 @@ public class RentalService {
         rentalRepository.delete(existing.get());
         return "Rental deleted successfully";
     }
+
+    //B2
+    public List<Rental> getRentalsByStatus(rw.ac.auca.vehiclerentalmanagementsystem.domain.RentalStatus status){
+        return rentalRepository.findByStatusOrderByPickupDateAsc(status);
+    }
+
+    //B3
+    public List<Rental> getRentalsBetween(java.time.LocalDate start, java.time.LocalDate end){
+        return rentalRepository.findByPickupDateBetweenOrderByPickupDateAsc(start, end);
+    }
 }

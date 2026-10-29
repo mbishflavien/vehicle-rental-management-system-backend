@@ -66,4 +66,8 @@ public class RenterController {
             return new ResponseEntity<>(returnedMessage, HttpStatus.CONFLICT);
         }
     }
+    @GetMapping("/by-last-name")
+    public ResponseEntity<List<Renter>> getRentersByLastName(@RequestParam String lastName){
+        return new ResponseEntity<>(renterService.getRentersByLastName(lastName), HttpStatus.OK);
+    }
 }
