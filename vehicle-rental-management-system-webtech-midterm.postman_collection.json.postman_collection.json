@@ -1,0 +1,2117 @@
+{
+  "info": {
+    "_postman_id": "193c00e8-f18e-4945-a2d6-4ce6d38fbd0b",
+    "name": "vehicle-rental-management-system-webtech-midterm.postman_collection.json",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58366583",
+    "_collection_link": "https://go.postman.co/collection/58366583-193c00e8-f18e-4945-a2d6-4ce6d38fbd0b?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "PART A",
+      "item": [
+        {
+          "name": "Feature(/api/features)",
+          "item": [
+            {
+              "name": "A2 - POST save feature(201)",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": ""
+                }
+              },
+              "response": [
+                {
+                  "name": "A2 - POST save feature(201)",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\"name\": \"Air Conditioning\"}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8084/api/features/save",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "api",
+                        "features",
+                        "save"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "content-type",
+                      "value": "text/plain;charset=UTF-8"
+                    },
+                    {
+                      "key": "content-length",
+                      "value": "26"
+                    },
+                    {
+                      "key": "date",
+                      "value": "Wed, 28 Oct 2026 14:40:23 GMT"
+                    },
+                    {
+                      "key": "keep-alive",
+                      "value": "timeout=60"
+                    },
+                    {
+                      "key": "connection",
+                      "value": "keep-alive"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "Feature saved successfully"
+                }
+              ]
+            },
+            {
+              "name": "A2 - GET all features",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": ""
+                }
+              },
+              "response": [
+                {
+                  "name": "A2 - GET all features",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "http://localhost:8084/api/features/all",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "api",
+                        "features",
+                        "all"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "content-type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "transfer-encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "date",
+                      "value": "Wed, 28 Oct 2026 14:41:26 GMT"
+                    },
+                    {
+                      "key": "keep-alive",
+                      "value": "timeout=60"
+                    },
+                    {
+                      "key": "connection",
+                      "value": "keep-alive"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "[\n  {\n    \"name\": \"GPS\",\n    \"id\": \"b1ad718e-037e-41ec-a108-c91e02fe959d\"\n  },\n  {\n    \"name\": \"4 Wheel Drive\",\n    \"id\": \"836fa0ab-4b72-4d6d-86e4-a168ba0ab82e\"\n  },\n  {\n    \"name\": \"Child Seat\",\n    \"id\": \"03a6ae08-72ea-48b0-aef8-8973fc3794d0\"\n  },\n  {\n    \"name\": \"Air Conditioning\",\n    \"id\": \"e9a9f65f-7436-4791-8196-f2224bd96397\"\n  }\n]"
+                }
+              ]
+            },
+            {
+              "name": "A2 - GET feature by id",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": ""
+                }
+              },
+              "response": [
+                {
+                  "name": "A2 - GET feature by id",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "http://localhost:8084/api/features/b1ad718e-037e-41ec-a108-c91e02fe959d",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "api",
+                        "features",
+                        "b1ad718e-037e-41ec-a108-c91e02fe959d"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "content-type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "transfer-encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "date",
+                      "value": "Wed, 28 Oct 2026 14:42:37 GMT"
+                    },
+                    {
+                      "key": "keep-alive",
+                      "value": "timeout=60"
+                    },
+                    {
+                      "key": "connection",
+                      "value": "keep-alive"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"name\": \"GPS\",\n  \"id\": \"b1ad718e-037e-41ec-a108-c91e02fe959d\"\n}"
+                }
+              ]
+            },
+            {
+              "name": "A2 - GET feature by id(404)",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": ""
+                }
+              },
+              "response": [
+                {
+                  "name": "A2 - GET feature by id(404)",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "http://localhost:8084/api/features/00000000-0000-0000-0000-000000000000",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "api",
+                        "features",
+                        "00000000-0000-0000-0000-000000000000"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "content-type",
+                      "value": "text/plain;charset=UTF-8"
+                    },
+                    {
+                      "key": "content-length",
+                      "value": "39"
+                    },
+                    {
+                      "key": "date",
+                      "value": "Wed, 28 Oct 2026 14:45:36 GMT"
+                    },
+                    {
+                      "key": "keep-alive",
+                      "value": "timeout=60"
+                    },
+                    {
+                      "key": "connection",
+                      "value": "keep-alive"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "The feature with that id does not exist"
+                }
+              ]
+            },
+            {
+              "name": "A2 - PUT update feature",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": ""
+                }
+              },
+              "response": [
+                {
+                  "name": "A2 - PUT update feature",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\"name\": \"AirCon\"}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8084/api/features/update/e9a9f65f-7436-4791-8196-f2224bd96397",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "api",
+                        "features",
+                        "update",
+                        "e9a9f65f-7436-4791-8196-f2224bd96397"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "content-type",
+                      "value": "text/plain;charset=UTF-8"
+                    },
+                    {
+                      "key": "content-length",
+                      "value": "28"
+                    },
+                    {
+                      "key": "date",
+                      "value": "Wed, 28 Oct 2026 14:49:29 GMT"
+                    },
+                    {
+                      "key": "keep-alive",
+                      "value": "timeout=60"
+                    },
+                    {
+                      "key": "connection",
+                      "value": "keep-alive"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "Feature updated successfully"
+                }
+              ]
+            },
+            {
+              "name": "A2 - PUT update features(404)",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": ""
+                }
+              },
+              "response": [
+                {
+                  "name": "A2 - PUT update features(404)",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\"name\": \"AirCon\"}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8084/api/features/update/00000000-0000-0000-0000-000000000000",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "api",
+                        "features",
+                        "update",
+                        "00000000-0000-0000-0000-000000000000"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "content-type",
+                      "value": "text/plain;charset=UTF-8"
+                    },
+                    {
+                      "key": "content-length",
+                      "value": "39"
+                    },
+                    {
+                      "key": "date",
+                      "value": "Wed, 28 Oct 2026 14:51:18 GMT"
+                    },
+                    {
+                      "key": "keep-alive",
+                      "value": "timeout=60"
+                    },
+                    {
+                      "key": "connection",
+                      "value": "keep-alive"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "The feature with that id does not exist"
+                }
+              ]
+            },
+            {
+              "name": "A2 - DELETE delete feature(404)",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": ""
+                }
+              },
+              "response": [
+                {
+                  "name": "A2 - DELETE delete feature(404)",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [],
+                    "url": {
+                      "raw": "http://localhost:8084/api/features/delete/00000000-0000-0000-0000-000000000000",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "api",
+                        "features",
+                        "delete",
+                        "00000000-0000-0000-0000-000000000000"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "content-type",
+                      "value": "text/plain;charset=UTF-8"
+                    },
+                    {
+                      "key": "content-length",
+                      "value": "39"
+                    },
+                    {
+                      "key": "date",
+                      "value": "Wed, 28 Oct 2026 14:52:54 GMT"
+                    },
+                    {
+                      "key": "keep-alive",
+                      "value": "timeout=60"
+                    },
+                    {
+                      "key": "connection",
+                      "value": "keep-alive"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "The feature with that id does not exist"
+                }
+              ]
+            },
+            {
+              "name": "A2 - DELETE delete feature",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": ""
+                }
+              },
+              "response": [
+                {
+                  "name": "A2 - DELETE delete feature",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [],
+                    "url": {
+                      "raw": "http://localhost:8084/api/features/delete/b1ad718e-037e-41ec-a108-c91e02fe959d",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "api",
+                        "features",
+                        "delete",
+                        "b1ad718e-037e-41ec-a108-c91e02fe959d"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "content-type",
+                      "value": "text/plain;charset=UTF-8"
+                    },
+                    {
+                      "key": "content-length",
+                      "value": "28"
+                    },
+                    {
+                      "key": "date",
+                      "value": "Wed, 28 Oct 2026 14:55:28 GMT"
+                    },
+                    {
+                      "key": "keep-alive",
+                      "value": "timeout=60"
+                    },
+                    {
+                      "key": "connection",
+                      "value": "keep-alive"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "Feature deleted successfully"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "ParkingSlot(/api/parking-slots))",
+          "item": [
+            {
+              "name": "A2 - POST save parking slot",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": ""
+                }
+              },
+              "response": [
+                {
+                  "name": "A2 - POST save parking slot",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\"slotNumber\": 5, \"name\": \"Slot 5\"}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8084/api/parking-slots/save",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "api",
+                        "parking-slots",
+                        "save"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "content-type",
+                      "value": "text/plain;charset=UTF-8"
+                    },
+                    {
+                      "key": "content-length",
+                      "value": "31"
+                    },
+                    {
+                      "key": "date",
+                      "value": "Wed, 28 Oct 2026 15:06:04 GMT"
+                    },
+                    {
+                      "key": "keep-alive",
+                      "value": "timeout=60"
+                    },
+                    {
+                      "key": "connection",
+                      "value": "keep-alive"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "Parking slot saved successfully"
+                }
+              ]
+            },
+            {
+              "name": "A2 - GET parking slots all",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": ""
+                }
+              },
+              "response": [
+                {
+                  "name": "A2 - GET parking slots all",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "http://localhost:8084/api/parking-slots/all",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "api",
+                        "parking-slots",
+                        "all"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "content-type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "transfer-encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "date",
+                      "value": "Wed, 28 Oct 2026 15:07:49 GMT"
+                    },
+                    {
+                      "key": "keep-alive",
+                      "value": "timeout=60"
+                    },
+                    {
+                      "key": "connection",
+                      "value": "keep-alive"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "[\n  {\n    \"slotNumber\": 1,\n    \"name\": \"Slot 1\",\n    \"id\": \"16600d25-00c0-4d45-8c70-13cf5315ee6f\"\n  },\n  {\n    \"slotNumber\": 2,\n    \"name\": \"Slot 2\",\n    \"id\": \"56789777-009c-4061-8c4c-85b2506c6cf5\"\n  },\n  {\n    \"slotNumber\": 3,\n    \"name\": \"Slot 3\",\n    \"id\": \"fbf55b10-1465-4436-817a-57ce2bec9aad\"\n  },\n  {\n    \"slotNumber\": 4,\n    \"name\": \"Slot 4\",\n    \"id\": \"8cd0e92a-6c44-4da5-9637-2b943068807a\"\n  },\n  {\n    \"slotNumber\": 5,\n    \"name\": \"Slot 5\",\n    \"id\": \"17bb28f7-54ec-4eb2-9310-267904a6cc73\"\n  }\n]"
+                }
+              ]
+            },
+            {
+              "name": "A2 - GET parking slots by id(404)",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": ""
+                }
+              },
+              "response": [
+                {
+                  "name": "A2 - GET parking slots by id(404)",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "http://localhost:8084/api/parking-slots/00000000-0000-0000-0000-000000000000",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "api",
+                        "parking-slots",
+                        "00000000-0000-0000-0000-000000000000"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "content-type",
+                      "value": "text/plain;charset=UTF-8"
+                    },
+                    {
+                      "key": "content-length",
+                      "value": "44"
+                    },
+                    {
+                      "key": "date",
+                      "value": "Wed, 28 Oct 2026 15:15:47 GMT"
+                    },
+                    {
+                      "key": "keep-alive",
+                      "value": "timeout=60"
+                    },
+                    {
+                      "key": "connection",
+                      "value": "keep-alive"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "The parking slot with that id does not exist"
+                }
+              ]
+            },
+            {
+              "name": "A2 - GET parking slots by id",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": ""
+                }
+              },
+              "response": [
+                {
+                  "name": "A2 - GET parking slots by id",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "http://localhost:8084/api/parking-slots/16600d25-00c0-4d45-8c70-13cf5315ee6f",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "api",
+                        "parking-slots",
+                        "16600d25-00c0-4d45-8c70-13cf5315ee6f"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "content-type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "transfer-encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "date",
+                      "value": "Wed, 28 Oct 2026 15:16:55 GMT"
+                    },
+                    {
+                      "key": "keep-alive",
+                      "value": "timeout=60"
+                    },
+                    {
+                      "key": "connection",
+                      "value": "keep-alive"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"slotNumber\": 1,\n  \"name\": \"Slot 1\",\n  \"id\": \"16600d25-00c0-4d45-8c70-13cf5315ee6f\"\n}"
+                }
+              ]
+            },
+            {
+              "name": "A2 - PUT update by id",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": ""
+                }
+              },
+              "response": [
+                {
+                  "name": "A2 - PUT update by id",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\"slotNumber\": 1, \"name\": \"Parking Slot 1\"}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8084/api/parking-slots/update/16600d25-00c0-4d45-8c70-13cf5315ee6f",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "api",
+                        "parking-slots",
+                        "update",
+                        "16600d25-00c0-4d45-8c70-13cf5315ee6f"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "content-type",
+                      "value": "text/plain;charset=UTF-8"
+                    },
+                    {
+                      "key": "content-length",
+                      "value": "33"
+                    },
+                    {
+                      "key": "date",
+                      "value": "Wed, 28 Oct 2026 15:18:45 GMT"
+                    },
+                    {
+                      "key": "keep-alive",
+                      "value": "timeout=60"
+                    },
+                    {
+                      "key": "connection",
+                      "value": "keep-alive"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "Parking slot updated successfully"
+                }
+              ]
+            },
+            {
+              "name": "A2 - PUT update by id(404)",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": ""
+                }
+              },
+              "response": [
+                {
+                  "name": "A2 - PUT update by id(404)",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\"slotNumber\": 5, \"name\": \"Slot 5\"}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8084/api/parking-slots/update/00000000-0000-0000-0000-000000000000",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "api",
+                        "parking-slots",
+                        "update",
+                        "00000000-0000-0000-0000-000000000000"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "content-type",
+                      "value": "text/plain;charset=UTF-8"
+                    },
+                    {
+                      "key": "content-length",
+                      "value": "44"
+                    },
+                    {
+                      "key": "date",
+                      "value": "Wed, 28 Oct 2026 15:20:32 GMT"
+                    },
+                    {
+                      "key": "keep-alive",
+                      "value": "timeout=60"
+                    },
+                    {
+                      "key": "connection",
+                      "value": "keep-alive"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "The parking slot with that id does not exist"
+                }
+              ]
+            },
+            {
+              "name": "A2 - DELETE by id(404)",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": ""
+                }
+              },
+              "response": [
+                {
+                  "name": "A2 - DELETE by id(404)",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [],
+                    "url": {
+                      "raw": "http://localhost:8084/api/parking-slots/delete/00000000-0000-0000-0000-000000000000",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "api",
+                        "parking-slots",
+                        "delete",
+                        "00000000-0000-0000-0000-000000000000"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "content-type",
+                      "value": "text/plain;charset=UTF-8"
+                    },
+                    {
+                      "key": "content-length",
+                      "value": "44"
+                    },
+                    {
+                      "key": "date",
+                      "value": "Wed, 28 Oct 2026 15:21:48 GMT"
+                    },
+                    {
+                      "key": "keep-alive",
+                      "value": "timeout=60"
+                    },
+                    {
+                      "key": "connection",
+                      "value": "keep-alive"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "The parking slot with that id does not exist"
+                }
+              ]
+            },
+            {
+              "name": "A2 - DELETE by id",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": ""
+                }
+              },
+              "response": [
+                {
+                  "name": "A2 - DELETE by id",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [],
+                    "url": {
+                      "raw": "http://localhost:8084/api/parking-slots/delete/17bb28f7-54ec-4eb2-9310-267904a6cc73",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "api",
+                        "parking-slots",
+                        "delete",
+                        "17bb28f7-54ec-4eb2-9310-267904a6cc73"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "content-type",
+                      "value": "text/plain;charset=UTF-8"
+                    },
+                    {
+                      "key": "content-length",
+                      "value": "33"
+                    },
+                    {
+                      "key": "date",
+                      "value": "Wed, 28 Oct 2026 15:23:28 GMT"
+                    },
+                    {
+                      "key": "keep-alive",
+                      "value": "timeout=60"
+                    },
+                    {
+                      "key": "connection",
+                      "value": "keep-alive"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "Parking slot deleted successfully"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Vehicle(/api/vehicle)",
+          "item": [
+            {
+              "name": "A2 - POST vehicle",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": ""
+                }
+              },
+              "response": [
+                {
+                  "name": "A2 - POST vehicle",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\"make\": \"Toyota\", \"model\": \"Levin\", \"plateNumber\": \"RAA111A\", \"parkingSlot\": {\"id\": \"fc04b7fa-08ca-438f-972b-0d4306cf2549\"}}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8084/api/vehicles/save",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "api",
+                        "vehicles",
+                        "save"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "content-type",
+                      "value": "text/plain;charset=UTF-8"
+                    },
+                    {
+                      "key": "content-length",
+                      "value": "26"
+                    },
+                    {
+                      "key": "date",
+                      "value": "Wed, 28 Oct 2026 15:41:41 GMT"
+                    },
+                    {
+                      "key": "keep-alive",
+                      "value": "timeout=60"
+                    },
+                    {
+                      "key": "connection",
+                      "value": "keep-alive"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "Vehicle saved successfully"
+                }
+              ]
+            },
+            {
+              "name": "A2 DELETE by id",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": ""
+                }
+              },
+              "response": [
+                {
+                  "name": "A2 DELETE by id",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [],
+                    "url": {
+                      "raw": "http://localhost:8084/api/vehicles/delete/5f780bcf-1031-46ff-894f-36f7777c5deb",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "api",
+                        "vehicles",
+                        "delete",
+                        "5f780bcf-1031-46ff-894f-36f7777c5deb"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "content-type",
+                      "value": "text/plain;charset=UTF-8"
+                    },
+                    {
+                      "key": "content-length",
+                      "value": "28"
+                    },
+                    {
+                      "key": "date",
+                      "value": "Wed, 28 Oct 2026 15:46:13 GMT"
+                    },
+                    {
+                      "key": "keep-alive",
+                      "value": "timeout=60"
+                    },
+                    {
+                      "key": "connection",
+                      "value": "keep-alive"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "Vehicle deleted successfully"
+                }
+              ]
+            },
+            {
+              "name": "A2 - GET all",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": ""
+                }
+              },
+              "response": [
+                {
+                  "name": "A2 - GET all",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "http://localhost:8084/api/vehicles/all",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "api",
+                        "vehicles",
+                        "all"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "content-type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "transfer-encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "date",
+                      "value": "Wed, 28 Oct 2026 15:46:49 GMT"
+                    },
+                    {
+                      "key": "keep-alive",
+                      "value": "timeout=60"
+                    },
+                    {
+                      "key": "connection",
+                      "value": "keep-alive"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "[\n  {\n    \"make\": \"Toyota\",\n    \"model\": \"Corolla\",\n    \"plateNumber\": \"RAA001A\",\n    \"features\": [],\n    \"id\": \"5d078c2d-f6f8-455a-91e8-075450801fec\",\n    \"parkingSlot\": {\n      \"id\": \"16600d25-00c0-4d45-8c70-13cf5315ee6f\",\n      \"name\": \"Parking Slot 1\",\n      \"slotNumber\": 1\n    }\n  },\n  {\n    \"make\": \"Hyundai\",\n    \"model\": \"Tucson\",\n    \"plateNumber\": \"RAA002A\",\n    \"features\": [],\n    \"id\": \"35631b4d-ee22-410c-b487-c1f383f16299\",\n    \"parkingSlot\": {\n      \"id\": \"56789777-009c-4061-8c4c-85b2506c6cf5\",\n      \"name\": \"Slot 2\",\n      \"slotNumber\": 2\n    }\n  },\n  {\n    \"make\": \"Nissan\",\n    \"model\": \"x-trail\",\n    \"plateNumber\": \"RAA003A\",\n    \"features\": [],\n    \"id\": \"153fafac-4308-4397-a12d-f856ca8c8833\",\n    \"parkingSlot\": {\n      \"id\": \"fbf55b10-1465-4436-817a-57ce2bec9aad\",\n      \"name\": \"Slot 3\",\n      \"slotNumber\": 3\n    }\n  },\n  {\n    \"make\": \"Toyota\",\n    \"model\": \"Levin\",\n    \"plateNumber\": \"RAA111A\",\n    \"features\": [],\n    \"id\": \"3b553c0b-c1c3-4c81-83f2-403e051525f7\",\n    \"parkingSlot\": {\n      \"id\": \"fc04b7fa-08ca-438f-972b-0d4306cf2549\",\n      \"name\": \"Slot 5\",\n      \"slotNumber\": 5\n    }\n  }\n]"
+                }
+              ]
+            },
+            {
+              "name": "A2 - GET by id",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": ""
+                }
+              },
+              "response": [
+                {
+                  "name": "A2 - GET by id",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "http://localhost:8084/api/vehicles/5d078c2d-f6f8-455a-91e8-075450801fec",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "api",
+                        "vehicles",
+                        "5d078c2d-f6f8-455a-91e8-075450801fec"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "content-type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "transfer-encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "date",
+                      "value": "Wed, 28 Oct 2026 15:53:04 GMT"
+                    },
+                    {
+                      "key": "keep-alive",
+                      "value": "timeout=60"
+                    },
+                    {
+                      "key": "connection",
+                      "value": "keep-alive"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"make\": \"Toyota\",\n  \"model\": \"Corolla\",\n  \"plateNumber\": \"RAA001A\",\n  \"features\": [],\n  \"id\": \"5d078c2d-f6f8-455a-91e8-075450801fec\",\n  \"parkingSlot\": {\n    \"id\": \"16600d25-00c0-4d45-8c70-13cf5315ee6f\",\n    \"name\": \"Parking Slot 1\",\n    \"slotNumber\": 1\n  }\n}"
+                }
+              ]
+            },
+            {
+              "name": "A2 - PUT by id",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": ""
+                }
+              },
+              "response": [
+                {
+                  "name": "A2 - PUT by id",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\"make\": \"Toyota\", \"model\": \"Corolla\", \"plateNumber\": \"RAA111B\", \"parkingSlot\": {\"id\": \"16600d25-00c0-4d45-8c70-13cf5315ee6f\"}}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8084/api/vehicles/update/5d078c2d-f6f8-455a-91e8-075450801fec",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "api",
+                        "vehicles",
+                        "update",
+                        "5d078c2d-f6f8-455a-91e8-075450801fec"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "content-type",
+                      "value": "text/plain;charset=UTF-8"
+                    },
+                    {
+                      "key": "content-length",
+                      "value": "28"
+                    },
+                    {
+                      "key": "date",
+                      "value": "Wed, 28 Oct 2026 15:56:13 GMT"
+                    },
+                    {
+                      "key": "keep-alive",
+                      "value": "timeout=60"
+                    },
+                    {
+                      "key": "connection",
+                      "value": "keep-alive"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "Vehicle updated successfully"
+                }
+              ]
+            },
+            {
+              "name": "A2 - DELETE by id",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": ""
+                }
+              },
+              "response": [
+                {
+                  "name": "A2 - DELETE by id",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [],
+                    "url": {
+                      "raw": "http://localhost:8084/api/vehicles/delete/3b553c0b-c1c3-4c81-83f2-403e051525f7",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "api",
+                        "vehicles",
+                        "delete",
+                        "3b553c0b-c1c3-4c81-83f2-403e051525f7"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "content-type",
+                      "value": "text/plain;charset=UTF-8"
+                    },
+                    {
+                      "key": "content-length",
+                      "value": "28"
+                    },
+                    {
+                      "key": "date",
+                      "value": "Wed, 28 Oct 2026 16:26:58 GMT"
+                    },
+                    {
+                      "key": "keep-alive",
+                      "value": "timeout=60"
+                    },
+                    {
+                      "key": "connection",
+                      "value": "keep-alive"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "Vehicle deleted successfully"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Renters(/api/renters)",
+          "item": [
+            {
+              "name": "A2 - POST save",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": ""
+                }
+              },
+              "response": [
+                {
+                  "name": "A2 - POST save",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\"firstName\": \"Test\", \"lastName\": \"Renter\", \"licenseNumber\": \"DL-RW-000001\", \"phone\": \"0788000000\", \"email\": \"test@example.com\"}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8084/api/renters/save",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "api",
+                        "renters",
+                        "save"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "content-type",
+                      "value": "text/plain;charset=UTF-8"
+                    },
+                    {
+                      "key": "content-length",
+                      "value": "25"
+                    },
+                    {
+                      "key": "date",
+                      "value": "Wed, 28 Oct 2026 16:29:52 GMT"
+                    },
+                    {
+                      "key": "keep-alive",
+                      "value": "timeout=60"
+                    },
+                    {
+                      "key": "connection",
+                      "value": "keep-alive"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "Renter saved successfully"
+                }
+              ]
+            },
+            {
+              "name": "A2 - GET all",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": ""
+                }
+              },
+              "response": [
+                {
+                  "name": "A2 - GET all",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "http://localhost:8084/api/renters/all",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "api",
+                        "renters",
+                        "all"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "content-type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "transfer-encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "date",
+                      "value": "Wed, 28 Oct 2026 16:31:16 GMT"
+                    },
+                    {
+                      "key": "keep-alive",
+                      "value": "timeout=60"
+                    },
+                    {
+                      "key": "connection",
+                      "value": "keep-alive"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "[\n  {\n    \"firstName\": \"Jean\",\n    \"lastName\": \"Karangwa\",\n    \"licenseNumber\": \"DL-RW-556677\",\n    \"phone\": \"0788123456\",\n    \"email\": \"jean.karangwa@yahoo.fr\",\n    \"id\": \"d845e581-ca64-474c-869a-0f38ee7943c4\"\n  },\n  {\n    \"firstName\": \"Eric\",\n    \"lastName\": \"Kay\",\n    \"licenseNumber\": \"DL-RW-112233\",\n    \"phone\": \"0788345678\",\n    \"email\": \"eric.kay@yahoo.fr\",\n    \"id\": \"55a7454c-2a83-4861-a26a-8ed5b54cdce7\"\n  },\n  {\n    \"firstName\": \"Grace\",\n    \"lastName\": \"Rukundo\",\n    \"licenseNumber\": \"DL-RW-445566\",\n    \"phone\": \"0788456789\",\n    \"email\": \"grace@gmail.com\",\n    \"id\": \"2e0eb70c-2442-48bb-b1ae-3c5efdb5a1c1\"\n  },\n  {\n    \"firstName\": \"Flavien\",\n    \"lastName\": \"Mupenzi\",\n    \"licenseNumber\": \"DL-RW-990011\",\n    \"phone\": \"0788567890\",\n    \"email\": \"mbish@icloud.com\",\n    \"id\": \"89495985-7885-49e4-bcc1-af72d7b70dd0\"\n  },\n  {\n    \"firstName\": \"Valens\",\n    \"lastName\": \"Karangwa\",\n    \"licenseNumber\": \"DL-RW-446633\",\n    \"phone\": \"0788567690\",\n    \"email\": \"valens@icloud.com\",\n    \"id\": \"e63f1d9b-3bcf-48f1-9d71-1cf9b44be5c4\"\n  },\n  {\n    \"firstName\": \"Test\",\n    \"lastName\": \"Renter\",\n    \"licenseNumber\": \"DL-RW-000001\",\n    \"phone\": \"0788000000\",\n    \"email\": \"test@example.com\",\n    \"id\": \"445edb67-fc5a-4d1a-9101-47b10dd84283\"\n  }\n]"
+                }
+              ]
+            },
+            {
+              "name": "A2 - GET by id",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": ""
+                }
+              },
+              "response": [
+                {
+                  "name": "A2 - GET by id",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "http://localhost:8084/api/renters/d845e581-ca64-474c-869a-0f38ee7943c4",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "api",
+                        "renters",
+                        "d845e581-ca64-474c-869a-0f38ee7943c4"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "content-type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "transfer-encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "date",
+                      "value": "Wed, 28 Oct 2026 16:33:57 GMT"
+                    },
+                    {
+                      "key": "keep-alive",
+                      "value": "timeout=60"
+                    },
+                    {
+                      "key": "connection",
+                      "value": "keep-alive"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"firstName\": \"Jean\",\n  \"lastName\": \"Karangwa\",\n  \"licenseNumber\": \"DL-RW-556677\",\n  \"phone\": \"0788123456\",\n  \"email\": \"jean.karangwa@yahoo.fr\",\n  \"id\": \"d845e581-ca64-474c-869a-0f38ee7943c4\"\n}"
+                }
+              ]
+            },
+            {
+              "name": "A2 - PUT update by id",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": ""
+                }
+              },
+              "response": [
+                {
+                  "name": "A2 - PUT update by id",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\"firstName\": \"Test\", \"lastName\": \"Renter2\", \"licenseNumber\": \"DL-RW-000002\", \"phone\": \"0788111111\", \"email\": \"test2@example.com\"}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8084/api/renters/update/445edb67-fc5a-4d1a-9101-47b10dd84283",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "api",
+                        "renters",
+                        "update",
+                        "445edb67-fc5a-4d1a-9101-47b10dd84283"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "text/plain;charset=UTF-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "27"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Thu, 29 Oct 2026 06:14:09 GMT"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=60"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "Renter updated successfully"
+                }
+              ]
+            },
+            {
+              "name": "A2 - DELETE by id",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": ""
+                }
+              },
+              "response": [
+                {
+                  "name": "A2 - DELETE by id",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [],
+                    "url": {
+                      "raw": "http://localhost:8084/api/renters/delete/445edb67-fc5a-4d1a-9101-47b10dd84283",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "api",
+                        "renters",
+                        "delete",
+                        "445edb67-fc5a-4d1a-9101-47b10dd84283"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "text/plain;charset=UTF-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "27"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Thu, 29 Oct 2026 06:15:16 GMT"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=60"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "Renter deleted successfully"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Rental(/api/rentals)",
+          "item": [
+            {
+              "name": "A2 - POST save",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": ""
+                }
+              },
+              "response": [
+                {
+                  "name": "A2 - POST save",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\"pickupDate\": \"2026-12-01\", \"status\": \"BOOKED\", \"days\": 2, \"dailyRate\": 25000, \"renter\": {\"id\": \"89495985-7885-49e4-bcc1-af72d7b70dd0\"}, \"vehicle\": {\"id\": \"5d078c2d-f6f8-455a-91e8-075450801fec\"}}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8084/api/rentals/save",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "api",
+                        "rentals",
+                        "save"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "text/plain;charset=UTF-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "25"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Thu, 29 Oct 2026 06:21:18 GMT"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=60"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "Rental saved successfully"
+                }
+              ]
+            },
+            {
+              "name": "A2 - GET all",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": ""
+                }
+              },
+              "response": [
+                {
+                  "name": "A2 - GET all",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "http://localhost:8084/api/rentals/all",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "api",
+                        "rentals",
+                        "all"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Thu, 29 Oct 2026 06:22:16 GMT"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=60"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "[\n  {\n    \"pickupDate\": \"2026-10-05\",\n    \"status\": \"BOOKED\",\n    \"days\": 2,\n    \"dailyRate\": 25000,\n    \"renter\": {\n      \"firstName\": \"Jean\",\n      \"lastName\": \"Karangwa\",\n      \"licenseNumber\": \"DL-RW-556677\",\n      \"phone\": \"0788123456\",\n      \"email\": \"jean.karangwa@yahoo.fr\",\n      \"id\": \"d845e581-ca64-474c-869a-0f38ee7943c4\"\n    },\n    \"vehicle\": {\n      \"make\": \"Toyota\",\n      \"model\": \"Corolla\",\n      \"plateNumber\": \"RAA111B\",\n      \"features\": [],\n      \"id\": \"5d078c2d-f6f8-455a-91e8-075450801fec\",\n      \"parkingSlot\": {\n        \"id\": \"16600d25-00c0-4d45-8c70-13cf5315ee6f\",\n        \"name\": \"Parking Slot 1\",\n        \"slotNumber\": 1\n      }\n    },\n    \"id\": \"4a1add7c-05d1-4e87-995f-f038bdf8e678\"\n  },\n  {\n    \"pickupDate\": \"2026-10-12\",\n    \"status\": \"PICKED_UP\",\n    \"days\": 3,\n    \"dailyRate\": 30000,\n    \"renter\": {\n      \"firstName\": \"Jean\",\n      \"lastName\": \"Karangwa\",\n      \"licenseNumber\": \"DL-RW-556677\",\n      \"phone\": \"0788123456\",\n      \"email\": \"jean.karangwa@yahoo.fr\",\n      \"id\": \"d845e581-ca64-474c-869a-0f38ee7943c4\"\n    },\n    \"vehicle\": {\n      \"make\": \"Hyundai\",\n      \"model\": \"Tucson\",\n      \"plateNumber\": \"RAA002A\",\n      \"features\": [],\n      \"id\": \"35631b4d-ee22-410c-b487-c1f383f16299\",\n      \"parkingSlot\": {\n        \"id\": \"56789777-009c-4061-8c4c-85b2506c6cf5\",\n        \"name\": \"Slot 2\",\n        \"slotNumber\": 2\n      }\n    },\n    \"id\": \"9a57452f-d09b-4974-ae2a-8487e1d7872c\"\n  },\n  {\n    \"pickupDate\": \"2026-10-20\",\n    \"status\": \"CANCELLED\",\n    \"days\": 1,\n    \"dailyRate\": 25000,\n    \"renter\": {\n      \"firstName\": \"Jean\",\n      \"lastName\": \"Karangwa\",\n      \"licenseNumber\": \"DL-RW-556677\",\n      \"phone\": \"0788123456\",\n      \"email\": \"jean.karangwa@yahoo.fr\",\n      \"id\": \"d845e581-ca64-474c-869a-0f38ee7943c4\"\n    },\n    \"vehicle\": {\n      \"make\": \"Toyota\",\n      \"model\": \"Corolla\",\n      \"plateNumber\": \"RAA111B\",\n      \"features\": [],\n      \"id\": \"5d078c2d-f6f8-455a-91e8-075450801fec\",\n      \"parkingSlot\": {\n        \"id\": \"16600d25-00c0-4d45-8c70-13cf5315ee6f\",\n        \"name\": \"Parking Slot 1\",\n        \"slotNumber\": 1\n      }\n    },\n    \"id\": \"8ed41f1c-10e3-4002-a596-045b76111843\"\n  },\n  {\n    \"pickupDate\": \"2026-10-20\",\n    \"status\": \"BOOKED\",\n    \"days\": 2,\n    \"dailyRate\": 25000,\n    \"renter\": {\n      \"firstName\": \"Valens\",\n      \"lastName\": \"Karangwa\",\n      \"licenseNumber\": \"DL-RW-446633\",\n      \"phone\": \"0788567690\",\n      \"email\": \"valens@icloud.com\",\n      \"id\": \"e63f1d9b-3bcf-48f1-9d71-1cf9b44be5c4\"\n    },\n    \"vehicle\": {\n      \"make\": \"Toyota\",\n      \"model\": \"Corolla\",\n      \"plateNumber\": \"RAA111B\",\n      \"features\": [],\n      \"id\": \"5d078c2d-f6f8-455a-91e8-075450801fec\",\n      \"parkingSlot\": {\n        \"id\": \"16600d25-00c0-4d45-8c70-13cf5315ee6f\",\n        \"name\": \"Parking Slot 1\",\n        \"slotNumber\": 1\n      }\n    },\n    \"id\": \"e20e1970-da45-4117-876a-2b8e65f45741\"\n  },\n  {\n    \"pickupDate\": \"2026-10-25\",\n    \"status\": \"RETURNED\",\n    \"days\": 4,\n    \"dailyRate\": 30000,\n    \"renter\": {\n      \"firstName\": \"Eric\",\n      \"lastName\": \"Kay\",\n      \"licenseNumber\": \"DL-RW-112233\",\n      \"phone\": \"0788345678\",\n      \"email\": \"eric.kay@yahoo.fr\",\n      \"id\": \"55a7454c-2a83-4861-a26a-8ed5b54cdce7\"\n    },\n    \"vehicle\": {\n      \"make\": \"Hyundai\",\n      \"model\": \"Tucson\",\n      \"plateNumber\": \"RAA002A\",\n      \"features\": [],\n      \"id\": \"35631b4d-ee22-410c-b487-c1f383f16299\",\n      \"parkingSlot\": {\n        \"id\": \"56789777-009c-4061-8c4c-85b2506c6cf5\",\n        \"name\": \"Slot 2\",\n        \"slotNumber\": 2\n      }\n    },\n    \"id\": \"bcdeb0cd-40e5-45c9-83ed-b5c9441c397a\"\n  },\n  {\n    \"pickupDate\": \"2026-11-03\",\n    \"status\": \"RETURNED\",\n    \"days\": 2,\n    \"dailyRate\": 28000,\n    \"renter\": {\n      \"firstName\": \"Grace\",\n      \"lastName\": \"Rukundo\",\n      \"licenseNumber\": \"DL-RW-445566\",\n      \"phone\": \"0788456789\",\n      \"email\": \"grace@gmail.com\",\n      \"id\": \"2e0eb70c-2442-48bb-b1ae-3c5efdb5a1c1\"\n    },\n    \"vehicle\": {\n      \"make\": \"Nissan\",\n      \"model\": \"x-trail\",\n      \"plateNumber\": \"RAA003A\",\n      \"features\": [],\n      \"id\": \"153fafac-4308-4397-a12d-f856ca8c8833\",\n      \"parkingSlot\": {\n        \"id\": \"fbf55b10-1465-4436-817a-57ce2bec9aad\",\n        \"name\": \"Slot 3\",\n        \"slotNumber\": 3\n      }\n    },\n    \"id\": \"d3a060c5-b798-44ec-bc83-0697a7d68522\"\n  },\n  {\n    \"pickupDate\": \"2026-11-09\",\n    \"status\": \"PICKED_UP\",\n    \"days\": 1,\n    \"dailyRate\": 25000,\n    \"renter\": {\n      \"firstName\": \"Flavien\",\n      \"lastName\": \"Mupenzi\",\n      \"licenseNumber\": \"DL-RW-990011\",\n      \"phone\": \"0788567890\",\n      \"email\": \"mbish@icloud.com\",\n      \"id\": \"89495985-7885-49e4-bcc1-af72d7b70dd0\"\n    },\n    \"vehicle\": {\n      \"make\": \"Toyota\",\n      \"model\": \"Corolla\",\n      \"plateNumber\": \"RAA111B\",\n      \"features\": [],\n      \"id\": \"5d078c2d-f6f8-455a-91e8-075450801fec\",\n      \"parkingSlot\": {\n        \"id\": \"16600d25-00c0-4d45-8c70-13cf5315ee6f\",\n        \"name\": \"Parking Slot 1\",\n        \"slotNumber\": 1\n      }\n    },\n    \"id\": \"0e570d35-34cc-4575-ac80-141bbf3e8002\"\n  },\n  {\n    \"pickupDate\": \"2026-11-15\",\n    \"status\": \"BOOKED\",\n    \"days\": 3,\n    \"dailyRate\": 30000,\n    \"renter\": {\n      \"firstName\": \"Eric\",\n      \"lastName\": \"Kay\",\n      \"licenseNumber\": \"DL-RW-112233\",\n      \"phone\": \"0788345678\",\n      \"email\": \"eric.kay@yahoo.fr\",\n      \"id\": \"55a7454c-2a83-4861-a26a-8ed5b54cdce7\"\n    },\n    \"vehicle\": {\n      \"make\": \"Nissan\",\n      \"model\": \"x-trail\",\n      \"plateNumber\": \"RAA003A\",\n      \"features\": [],\n      \"id\": \"153fafac-4308-4397-a12d-f856ca8c8833\",\n      \"parkingSlot\": {\n        \"id\": \"fbf55b10-1465-4436-817a-57ce2bec9aad\",\n        \"name\": \"Slot 3\",\n        \"slotNumber\": 3\n      }\n    },\n    \"id\": \"7979f6e5-6e6c-4bbc-9dba-0b2aee0c835f\"\n  },\n  {\n    \"pickupDate\": \"2026-11-21\",\n    \"status\": \"CANCELLED\",\n    \"days\": 2,\n    \"dailyRate\": 25000,\n    \"renter\": {\n      \"firstName\": \"Grace\",\n      \"lastName\": \"Rukundo\",\n      \"licenseNumber\": \"DL-RW-445566\",\n      \"phone\": \"0788456789\",\n      \"email\": \"grace@gmail.com\",\n      \"id\": \"2e0eb70c-2442-48bb-b1ae-3c5efdb5a1c1\"\n    },\n    \"vehicle\": {\n      \"make\": \"Hyundai\",\n      \"model\": \"Tucson\",\n      \"plateNumber\": \"RAA002A\",\n      \"features\": [],\n      \"id\": \"35631b4d-ee22-410c-b487-c1f383f16299\",\n      \"parkingSlot\": {\n        \"id\": \"56789777-009c-4061-8c4c-85b2506c6cf5\",\n        \"name\": \"Slot 2\",\n        \"slotNumber\": 2\n      }\n    },\n    \"id\": \"d6878fd5-2d79-4c74-a746-a373e7ee17ae\"\n  },\n  {\n    \"pickupDate\": \"2026-11-28\",\n    \"status\": \"BOOKED\",\n    \"days\": 4,\n    \"dailyRate\": 28000,\n    \"renter\": {\n      \"firstName\": \"Flavien\",\n      \"lastName\": \"Mupenzi\",\n      \"licenseNumber\": \"DL-RW-990011\",\n      \"phone\": \"0788567890\",\n      \"email\": \"mbish@icloud.com\",\n      \"id\": \"89495985-7885-49e4-bcc1-af72d7b70dd0\"\n    },\n    \"vehicle\": {\n      \"make\": \"Nissan\",\n      \"model\": \"x-trail\",\n      \"plateNumber\": \"RAA003A\",\n      \"features\": [],\n      \"id\": \"153fafac-4308-4397-a12d-f856ca8c8833\",\n      \"parkingSlot\": {\n        \"id\": \"fbf55b10-1465-4436-817a-57ce2bec9aad\",\n        \"name\": \"Slot 3\",\n        \"slotNumber\": 3\n      }\n    },\n    \"id\": \"e85ce7b7-82c8-40d8-9553-2bd32b34d86e\"\n  },\n  {\n    \"pickupDate\": \"2026-12-01\",\n    \"status\": \"BOOKED\",\n    \"days\": 2,\n    \"dailyRate\": 25000,\n    \"renter\": {\n      \"firstName\": \"Flavien\",\n      \"lastName\": \"Mupenzi\",\n      \"licenseNumber\": \"DL-RW-990011\",\n      \"phone\": \"0788567890\",\n      \"email\": \"mbish@icloud.com\",\n      \"id\": \"89495985-7885-49e4-bcc1-af72d7b70dd0\"\n    },\n    \"vehicle\": {\n      \"make\": \"Toyota\",\n      \"model\": \"Corolla\",\n      \"plateNumber\": \"RAA111B\",\n      \"features\": [],\n      \"id\": \"5d078c2d-f6f8-455a-91e8-075450801fec\",\n      \"parkingSlot\": {\n        \"id\": \"16600d25-00c0-4d45-8c70-13cf5315ee6f\",\n        \"name\": \"Parking Slot 1\",\n        \"slotNumber\": 1\n      }\n    },\n    \"id\": \"cfcb1e8e-c004-4754-bf26-fe0544abbcb4\"\n  }\n]"
+                }
+              ]
+            },
+            {
+              "name": "A2 - GET by id",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": ""
+                }
+              },
+              "response": [
+                {
+                  "name": "A2 - GET by id",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "http://localhost:8084/api/rentals/4a1add7c-05d1-4e87-995f-f038bdf8e678",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "api",
+                        "rentals",
+                        "4a1add7c-05d1-4e87-995f-f038bdf8e678"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Thu, 29 Oct 2026 06:23:47 GMT"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=60"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"pickupDate\": \"2026-10-05\",\n  \"status\": \"BOOKED\",\n  \"days\": 2,\n  \"dailyRate\": 25000,\n  \"renter\": {\n    \"firstName\": \"Jean\",\n    \"lastName\": \"Karangwa\",\n    \"licenseNumber\": \"DL-RW-556677\",\n    \"phone\": \"0788123456\",\n    \"email\": \"jean.karangwa@yahoo.fr\",\n    \"id\": \"d845e581-ca64-474c-869a-0f38ee7943c4\"\n  },\n  \"vehicle\": {\n    \"make\": \"Toyota\",\n    \"model\": \"Corolla\",\n    \"plateNumber\": \"RAA111B\",\n    \"features\": [],\n    \"id\": \"5d078c2d-f6f8-455a-91e8-075450801fec\",\n    \"parkingSlot\": {\n      \"id\": \"16600d25-00c0-4d45-8c70-13cf5315ee6f\",\n      \"name\": \"Parking Slot 1\",\n      \"slotNumber\": 1\n    }\n  },\n  \"id\": \"4a1add7c-05d1-4e87-995f-f038bdf8e678\"\n}"
+                }
+              ]
+            },
+            {
+              "name": "A2 - PUT by id",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": ""
+                }
+              },
+              "response": [
+                {
+                  "name": "A2 - PUT by id",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\"pickupDate\": \"2026-12-02\", \"days\": 3, \"dailyRate\": 30000, \"renter\": {\"id\": \"d845e581-ca64-474c-869a-0f38ee7943c4\"}, \"vehicle\": {\"id\": \"5d078c2d-f6f8-455a-91e8-075450801fec\"}}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8084/api/rentals/update/4a1add7c-05d1-4e87-995f-f038bdf8e678",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "api",
+                        "rentals",
+                        "update",
+                        "4a1add7c-05d1-4e87-995f-f038bdf8e678"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "text/plain;charset=UTF-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "27"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Thu, 29 Oct 2026 06:27:23 GMT"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=60"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "Rental updated successfully"
+                }
+              ]
+            },
+            {
+              "name": "A2 - PUT by id(404)",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": ""
+                }
+              },
+              "response": [
+                {
+                  "name": "A2 - PUT by id(404)",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\"pickupDate\": \"2026-12-02\", \"days\": 3, \"dailyRate\": 30000, \"renter\": {\"id\": \"d845e581-ca64-474c-869a-0f38ee7943c4\"}, \"vehicle\": {\"id\": \"5d078c2d-f6f8-455a-91e8-075450801fec\"}}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:8084/api/rentals/update/00000000-0000-0000-0000-000000000000",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "api",
+                        "rentals",
+                        "update",
+                        "00000000-0000-0000-0000-000000000000"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "text/plain;charset=UTF-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "38"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Thu, 29 Oct 2026 06:29:09 GMT"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=60"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "The rental with that id does not exist"
+                }
+              ]
+            },
+            {
+              "name": "A2 - DELETE by id",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": ""
+                }
+              },
+              "response": [
+                {
+                  "name": "A2 - DELETE by id",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [],
+                    "url": {
+                      "raw": "http://localhost:8084/api/rentals/delete/4a1add7c-05d1-4e87-995f-f038bdf8e678",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "api",
+                        "rentals",
+                        "delete",
+                        "4a1add7c-05d1-4e87-995f-f038bdf8e678"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "text/plain;charset=UTF-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "27"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Thu, 29 Oct 2026 06:52:11 GMT"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=60"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "Rental deleted successfully"
+                }
+              ]
+            },
+            {
+              "name": "A2 - DELETE by id(404)",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": ""
+                }
+              },
+              "response": [
+                {
+                  "name": "A2 - DELETE by id(404)",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [],
+                    "url": {
+                      "raw": "http://localhost:8084/api/rentals/delete/00000000-0000-0000-0000-000000000000",
+                      "protocol": "http",
+                      "host": [
+                        "localhost"
+                      ],
+                      "port": "8084",
+                      "path": [
+                        "api",
+                        "rentals",
+                        "delete",
+                        "00000000-0000-0000-0000-000000000000"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "text/plain;charset=UTF-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "38"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Thu, 29 Oct 2026 06:55:46 GMT"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=60"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "The rental with that id does not exist"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
