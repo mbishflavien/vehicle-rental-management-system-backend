@@ -81,4 +81,9 @@ public class ParkingSlotService {
         parkingSlotRepository.delete(existing.get());
         return "Parking slot deleted successfully";
     }
+
+    //C2
+    public List<ParkingSlot> getFreeParkingSlots(){
+        return parkingSlotRepository.findFreeParkingSlots();
+    }
 }

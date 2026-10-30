@@ -66,4 +66,10 @@ public class VehicleController {
             return new ResponseEntity<>(returnedMessage, HttpStatus.CONFLICT);
         }
     }
+
+    //C1
+    @GetMapping("/by-feature")
+    public ResponseEntity<List<Vehicle>> getVehiclesByFeature(@RequestParam String name){
+        return new ResponseEntity<>(vehicleService.getVehiclesByFeature(name), HttpStatus.OK);
+    }
 }

@@ -66,4 +66,10 @@ public class ParkingSlotController {
             return new ResponseEntity<>(returnedMessage, HttpStatus.CONFLICT);
         }
     }
+
+    //C2
+    @GetMapping("/free")
+    public ResponseEntity<List<ParkingSlot>> getFreeParkingSlots(){
+        return new ResponseEntity<>(parkingSlotService.getFreeParkingSlots(), HttpStatus.OK);
+    }
 }

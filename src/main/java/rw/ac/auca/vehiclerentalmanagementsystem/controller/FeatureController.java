@@ -66,4 +66,10 @@ public class FeatureController {
             return new ResponseEntity<>(returnedMessage, HttpStatus.CONFLICT);
         }
     }
+
+    //C3
+    @GetMapping("/unused")
+    public ResponseEntity<List<Feature>> getUnusedFeatures(){
+        return new ResponseEntity<>(featureService.getUnusedFeatures(), HttpStatus.OK);
+    }
 }

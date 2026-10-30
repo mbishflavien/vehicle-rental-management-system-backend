@@ -114,4 +114,8 @@ public class VehicleService {
         vehicleRepository.delete(existing.get());
         return "Vehicle deleted successfully";
     }
+    //C1
+    public List<Vehicle> getVehiclesByFeature(String name){
+        return vehicleRepository.findVehiclesByFeatureName(name);
+    }
 }

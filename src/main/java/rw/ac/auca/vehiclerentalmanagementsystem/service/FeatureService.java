@@ -73,4 +73,9 @@ public class FeatureService {
         return "Feature deleted successfully";
     }
 
+    //C3
+    public List<Feature> getUnusedFeatures(){
+        return featureRepository.findUnusedFeatures();
+    }
+
 }

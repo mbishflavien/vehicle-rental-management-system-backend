@@ -70,4 +70,13 @@ public class RenterController {
     public ResponseEntity<List<Renter>> getRentersByLastName(@RequestParam String lastName){
         return new ResponseEntity<>(renterService.getRentersByLastName(lastName), HttpStatus.OK);
     }
+    //C4
+    @GetMapping("/of-vehicle/{vehicleId}")
+    public ResponseEntity<?> getRentersOfVehicle(@PathVariable java.util.UUID vehicleId){
+        Object result = renterService.getRentersOfVehicle(vehicleId);
+        if(result instanceof String){
+            return new ResponseEntity<>(result, HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(result, HttpStatus.OK);
+    }
 }

@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import rw.ac.auca.vehiclerentalmanagementsystem.domain.Renter;
 import rw.ac.auca.vehiclerentalmanagementsystem.repository.RenterRepository;
+import rw.ac.auca.vehiclerentalmanagementsystem.repository.VehicleRepository;
 
 import java.util.List;
 import java.util.Optional;
@@ -14,6 +15,10 @@ public class RenterService {
 
     @Autowired
     private RenterRepository renterRepository;
+
+    @Autowired
+    private VehicleRepository vehicleRepository;
+
 
     // CREATE
     public String saveRenter(Renter renter) {
@@ -104,5 +109,13 @@ public class RenterService {
     //B1
     public List<Renter> getRentersByLastName(String lastName){
         return renterRepository.findByLastNameIgnoreCaseOrderByFirstNameAsc(lastName);
+    }
+
+    //C4
+    public Object getRentersOfVehicle(java.util.UUID vehicleId){
+        if(!vehicleRepository.existsById(vehicleId)){
+            return "The vehicle with that id does not exist";
+        }
+        return renterRepository.findRentersByVehicleId(vehicleId);
     }
 }
