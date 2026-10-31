@@ -24,9 +24,14 @@ public class RentalController {
         String returnedMessage = rentalService.saveRental(rental);
         if (returnedMessage.equals("Rental saved successfully")) {
             return new ResponseEntity<>(returnedMessage, HttpStatus.CREATED);
-        } else {
+        }else if(returnedMessage.equals("Rental date cannot be in the past")){
+            return new ResponseEntity<>(returnedMessage, HttpStatus.BAD_REQUEST);
+        }else if(returnedMessage.equals("Vehicle is already rented on that date")){
+            return new ResponseEntity<>(returnedMessage, HttpStatus.CONFLICT);
+        }else{
             return new ResponseEntity<>(returnedMessage, HttpStatus.CONFLICT);
         }
+
     }
 
     @GetMapping("/all")
@@ -78,5 +83,17 @@ public class RentalController {
         java.time.LocalDate startDate = java.time.LocalDate.parse(start.trim());
         java.time.LocalDate endDate = java.time.LocalDate.parse(end.trim());
         return new ResponseEntity<>(rentalService.getRentalsBetween(startDate, endDate), HttpStatus.OK);
+    }
+
+    @PatchMapping("/{id}/status")
+    public ResponseEntity<?> updateRentalStatus(@PathVariable java.util.UUID id, @RequestParam rw.ac.auca.vehiclerentalmanagementsystem.domain.RentalStatus status){
+        String returnedMessage = rentalService.updateRentalStatus(id, status);
+        if(returnedMessage.equals("Rental status updated successfully")){
+            return new ResponseEntity<>(returnedMessage, HttpStatus.OK);
+        }else if(returnedMessage.equals("The rental with that id does not exist")){
+            return new ResponseEntity<>(returnedMessage, HttpStatus.NOT_FOUND);
+        }else{
+            return new ResponseEntity<>(returnedMessage, HttpStatus.BAD_REQUEST);
+        }
     }
 }

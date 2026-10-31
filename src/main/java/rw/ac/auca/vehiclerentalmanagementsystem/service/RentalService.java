@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import rw.ac.auca.vehiclerentalmanagementsystem.domain.Rental;
 import rw.ac.auca.vehiclerentalmanagementsystem.repository.RentalRepository;
+import rw.ac.auca.vehiclerentalmanagementsystem.repository.RenterRepository;
+import rw.ac.auca.vehiclerentalmanagementsystem.repository.VehicleRepository;
 
 import java.util.List;
 import java.util.Optional;
@@ -14,6 +16,13 @@ public class RentalService {
 
     @Autowired
     private RentalRepository rentalRepository;
+
+    @Autowired
+    private RenterRepository renterRepository;
+
+    @Autowired
+    private VehicleRepository vehicleRepository;
+
 
     // CREATE
     public String saveRental(Rental rental) {
@@ -32,6 +41,19 @@ public class RentalService {
         if (rental.getDailyRate() <= 0) {
             return "Daily rate must be greater than 0";
         }
+        if (rental.getPickupDate().isBefore(java.time.LocalDate.now())){
+            return "Rental date cannot be in the past";
+        }
+        boolean exists = rentalRepository.existsByVehicleIdAndPickupDateAndStatusNot(
+                rental.getVehicle().getId(),
+                rental.getPickupDate(),
+                rw.ac.auca.vehiclerentalmanagementsystem.domain.RentalStatus.CANCELLED
+        );
+        if(exists){
+            return "Vehicle is already rented on that date";
+        }
+
+        rental.setStatus(rw.ac.auca.vehiclerentalmanagementsystem.domain.RentalStatus.BOOKED);
         rentalRepository.save(rental);
         return "Rental saved successfully";
     }
@@ -84,5 +106,34 @@ public class RentalService {
     //B3
     public List<Rental> getRentalsBetween(java.time.LocalDate start, java.time.LocalDate end){
         return rentalRepository.findByPickupDateBetweenOrderByPickupDateAsc(start, end);
+    }
+
+    //UPDATE rental status
+    public String updateRentalStatus(java.util.UUID id, rw.ac.auca.vehiclerentalmanagementsystem.domain.RentalStatus newStatus){
+        Optional<Rental> existing = rentalRepository.findById(id);
+        if(existing.isEmpty()){
+            return "The rental with that id does not exist";
+        }
+        Rental rental = existing.get();
+        rw.ac.auca.vehiclerentalmanagementsystem.domain.RentalStatus current = rental.getStatus();
+
+        boolean allowed = false;
+        if(current == rw.ac.auca.vehiclerentalmanagementsystem.domain.RentalStatus.BOOKED){
+            if(newStatus == rw.ac.auca.vehiclerentalmanagementsystem.domain.RentalStatus.PICKED_UP || newStatus == rw.ac.auca.vehiclerentalmanagementsystem.domain.RentalStatus.CANCELLED){
+                allowed = true;
+            }
+        }else if(current == rw.ac.auca.vehiclerentalmanagementsystem.domain.RentalStatus.PICKED_UP){
+            if(newStatus == rw.ac.auca.vehiclerentalmanagementsystem.domain.RentalStatus.RETURNED || newStatus == rw.ac.auca.vehiclerentalmanagementsystem.domain.RentalStatus.CANCELLED){
+                allowed = true;
+            }
+        }
+
+        if(!allowed){
+            return "Cannot change status from " + current + " to " + newStatus;
+        }
+
+        rental.setStatus(newStatus);
+        rentalRepository.save(rental);
+        return "Rental status updated successfully";
     }
 }

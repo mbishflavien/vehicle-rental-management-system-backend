@@ -2,8 +2,10 @@ package rw.ac.auca.vehiclerentalmanagementsystem.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import rw.ac.auca.vehiclerentalmanagementsystem.domain.Feature;
 import rw.ac.auca.vehiclerentalmanagementsystem.domain.ParkingSlot;
 import rw.ac.auca.vehiclerentalmanagementsystem.domain.Vehicle;
+import rw.ac.auca.vehiclerentalmanagementsystem.repository.FeatureRepository;
 import rw.ac.auca.vehiclerentalmanagementsystem.repository.ParkingSlotRepository;
 import rw.ac.auca.vehiclerentalmanagementsystem.repository.VehicleRepository;
 
@@ -18,6 +20,11 @@ public class VehicleService {
     private VehicleRepository vehicleRepository;
 
     @Autowired ParkingSlotRepository parkingSlotRepository;
+
+    @Autowired
+    private FeatureRepository featureRepository;
+
+
 
     // CREATE
     public String saveVehicle(Vehicle vehicle) {
@@ -118,4 +125,42 @@ public class VehicleService {
     public List<Vehicle> getVehiclesByFeature(String name){
         return vehicleRepository.findVehiclesByFeatureName(name);
     }
+
+    //D3 feature to vehicle
+    public String addFeatureToVehicle(java.util.UUID vehicleId, java.util.UUID featureId){
+        Optional<Vehicle> vehicle = vehicleRepository.findById(vehicleId);
+        if(vehicle.isEmpty()){
+            return "The vehicle with that id does not exist";
+        }
+        Optional<Feature> feature = featureRepository.findById(featureId);
+        if(feature.isEmpty()){
+            return "That feature does not exist";
+        }
+        if(vehicle.get().getFeatures().contains(feature.get())){
+            return "The vehicle already has that feature";
+        }
+        vehicle.get().getFeatures().add(feature.get());
+        vehicleRepository.save(vehicle.get());
+        return "Feature added to the vehicle";
+    }
+
+    //D4 vehicle to another parking slot
+    public String changeParkingSlot(java.util.UUID vehicleId, int slotNumber){
+        Optional<Vehicle> vehicle = vehicleRepository.findById(vehicleId);
+        if(vehicle.isEmpty()){
+            return "The vehicle with that id does not exist";
+        }
+        Optional<ParkingSlot> parkingSlot = parkingSlotRepository.findBySlotNumber(slotNumber);
+        if(parkingSlot.isEmpty()){
+            return "The parking slot with that slotNumber does not exist";
+        }
+        Optional<Vehicle> occupant = vehicleRepository.findAll().stream().filter(v -> v.getParkingSlot() != null && v.getParkingSlot().getId().equals(parkingSlot.get().getId()) && !v.getId().equals(vehicleId)).findFirst();
+        if(occupant.isPresent()){
+            return "That parking slot is taken by another vehicle";
+        }
+        vehicle.get().setParkingSlot(parkingSlot.get());
+        vehicleRepository.save(vehicle.get());
+        return "Parking slot changed successfully";
+    }
+
 }
