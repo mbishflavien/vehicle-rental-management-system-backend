@@ -19,4 +19,6 @@ public interface RentalRepository extends JpaRepository<Rental, UUID> {
     @org.springframework.data.jpa.repository.Modifying
     @org.springframework.transaction.annotation.Transactional
     @Query("UPDATE Rental r SET r.status = rw.ac.auca.vehiclerentalmanagementsystem.domain.RentalStatus.CANCELLED WHERE r.vehicle.id = :vehicleId AND r.pickupDate = :date AND r.status <> rw.ac.auca.vehiclerentalmanagementsystem.domain.RentalStatus.RETURNED") int cancelRentalsForVehicleOnDate(@Param("vehicleId") java.util.UUID vehicleId, @Param("date") java.time.LocalDate date);
+
+    long countByStatus(rw.ac.auca.vehiclerentalmanagementsystem.domain.RentalStatus status);
 }
