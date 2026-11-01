@@ -98,4 +98,16 @@ public class RentalController {
             return new ResponseEntity<>(returnedMessage, HttpStatus.BAD_REQUEST);
         }
     }
+
+    @GetMapping("/stats/by-status")
+    public ResponseEntity<List<Object[]>> getRentalsPerStatus(){
+        return new ResponseEntity<>(rentalService.getRentalsPerStatus(), HttpStatus.OK);
+    }
+
+    @PatchMapping("/cancel-day")
+    public ResponseEntity<?> cancelRentalsOnDay(@RequestParam java.util.UUID vehicleId, @RequestParam String date){
+        java.time.LocalDate d = java.time.LocalDate.parse(date);
+        String msg = rentalService.cancelRentalsOnDay(vehicleId, d);
+        return new ResponseEntity<>(msg, HttpStatus.OK);
+    }
 }

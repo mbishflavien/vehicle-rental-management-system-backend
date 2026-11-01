@@ -141,4 +141,15 @@ public class RentalService {
         rentalRepository.save(rental);
         return "Rental status updated successfully";
     }
+    //F1 cont for rental statuses
+    public List<Object[]> getRentalsPerStatus(){
+        return rentalRepository.countRentalsByStatus();
+    }
+
+    //F2 Bulk cancel
+    @org.springframework.transaction.annotation.Transactional
+    public String cancelRentalsOnDay(java.util.UUID vehicleId, java.time.LocalDate date){
+        int count = rentalRepository.cancelRentalsForVehicleOnDate(vehicleId, date);
+        return count + " rentals cancelled";
+    }
 }
