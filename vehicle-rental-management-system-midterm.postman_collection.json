@@ -1,7 +1,7 @@
 {
   "info": {
     "_postman_id": "193c00e8-f18e-4945-a2d6-4ce6d38fbd0b",
-    "name": "vehicle-rental-management-system-webtech-midterm.postman_collection.json",
+    "name": "vehicle-rental-management-system-midterm.postman_collection.json",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "_exporter_id": "58366583",
     "_collection_link": "https://go.postman.co/collection/58366583-193c00e8-f18e-4945-a2d6-4ce6d38fbd0b?source=collection_link"
@@ -2108,6 +2108,1758 @@
                   "body": "The rental with that id does not exist"
                 }
               ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PART B",
+      "item": [
+        {
+          "name": "B1 - GET renters by lastname",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": [
+            {
+              "name": "B1 - GET renters by lastname",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8084/api/renters/by-last-name?lastName=karangwa",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8084",
+                  "path": [
+                    "api",
+                    "renters",
+                    "by-last-name"
+                  ],
+                  "query": [
+                    {
+                      "key": "lastName",
+                      "value": "karangwa"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 29 Oct 2026 16:07:43 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n  {\n    \"firstName\": \"Jean\",\n    \"lastName\": \"Karangwa\",\n    \"licenseNumber\": \"DL-RW-556677\",\n    \"phone\": \"0788123456\",\n    \"email\": \"jean.karangwa@yahoo.fr\",\n    \"id\": \"d845e581-ca64-474c-869a-0f38ee7943c4\"\n  },\n  {\n    \"firstName\": \"Valens\",\n    \"lastName\": \"Karangwa\",\n    \"licenseNumber\": \"DL-RW-446633\",\n    \"phone\": \"0788567690\",\n    \"email\": \"valens@icloud.com\",\n    \"id\": \"e63f1d9b-3bcf-48f1-9d71-1cf9b44be5c4\"\n  }\n]"
+            }
+          ]
+        },
+        {
+          "name": "B2 - GET rentals by status",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": [
+            {
+              "name": "B2 - GET rentals by status",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8084/api/rentals/by-status?status=BOOKED",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8084",
+                  "path": [
+                    "api",
+                    "rentals",
+                    "by-status"
+                  ],
+                  "query": [
+                    {
+                      "key": "status",
+                      "value": "BOOKED"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 29 Oct 2026 21:04:32 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n  {\n    \"pickupDate\": \"2026-10-20\",\n    \"status\": \"BOOKED\",\n    \"days\": 2,\n    \"dailyRate\": 25000,\n    \"renter\": {\n      \"firstName\": \"Valens\",\n      \"lastName\": \"Karangwa\",\n      \"licenseNumber\": \"DL-RW-446633\",\n      \"phone\": \"0788567690\",\n      \"email\": \"valens@icloud.com\",\n      \"id\": \"e63f1d9b-3bcf-48f1-9d71-1cf9b44be5c4\"\n    },\n    \"vehicle\": {\n      \"make\": \"Toyota\",\n      \"model\": \"Corolla\",\n      \"plateNumber\": \"RAA111B\",\n      \"features\": [],\n      \"id\": \"5d078c2d-f6f8-455a-91e8-075450801fec\",\n      \"parkingSlot\": {\n        \"id\": \"16600d25-00c0-4d45-8c70-13cf5315ee6f\",\n        \"name\": \"Parking Slot 1\",\n        \"slotNumber\": 1\n      }\n    },\n    \"id\": \"e20e1970-da45-4117-876a-2b8e65f45741\"\n  },\n  {\n    \"pickupDate\": \"2026-11-15\",\n    \"status\": \"BOOKED\",\n    \"days\": 3,\n    \"dailyRate\": 30000,\n    \"renter\": {\n      \"firstName\": \"Eric\",\n      \"lastName\": \"Kay\",\n      \"licenseNumber\": \"DL-RW-112233\",\n      \"phone\": \"0788345678\",\n      \"email\": \"eric.kay@yahoo.fr\",\n      \"id\": \"55a7454c-2a83-4861-a26a-8ed5b54cdce7\"\n    },\n    \"vehicle\": {\n      \"make\": \"Nissan\",\n      \"model\": \"x-trail\",\n      \"plateNumber\": \"RAA003A\",\n      \"features\": [],\n      \"id\": \"153fafac-4308-4397-a12d-f856ca8c8833\",\n      \"parkingSlot\": {\n        \"id\": \"fbf55b10-1465-4436-817a-57ce2bec9aad\",\n        \"name\": \"Slot 3\",\n        \"slotNumber\": 3\n      }\n    },\n    \"id\": \"7979f6e5-6e6c-4bbc-9dba-0b2aee0c835f\"\n  },\n  {\n    \"pickupDate\": \"2026-11-28\",\n    \"status\": \"BOOKED\",\n    \"days\": 4,\n    \"dailyRate\": 28000,\n    \"renter\": {\n      \"firstName\": \"Flavien\",\n      \"lastName\": \"Mupenzi\",\n      \"licenseNumber\": \"DL-RW-990011\",\n      \"phone\": \"0788567890\",\n      \"email\": \"mbish@icloud.com\",\n      \"id\": \"89495985-7885-49e4-bcc1-af72d7b70dd0\"\n    },\n    \"vehicle\": {\n      \"make\": \"Nissan\",\n      \"model\": \"x-trail\",\n      \"plateNumber\": \"RAA003A\",\n      \"features\": [],\n      \"id\": \"153fafac-4308-4397-a12d-f856ca8c8833\",\n      \"parkingSlot\": {\n        \"id\": \"fbf55b10-1465-4436-817a-57ce2bec9aad\",\n        \"name\": \"Slot 3\",\n        \"slotNumber\": 3\n      }\n    },\n    \"id\": \"e85ce7b7-82c8-40d8-9553-2bd32b34d86e\"\n  },\n  {\n    \"pickupDate\": \"2026-12-01\",\n    \"status\": \"BOOKED\",\n    \"days\": 2,\n    \"dailyRate\": 25000,\n    \"renter\": {\n      \"firstName\": \"Flavien\",\n      \"lastName\": \"Mupenzi\",\n      \"licenseNumber\": \"DL-RW-990011\",\n      \"phone\": \"0788567890\",\n      \"email\": \"mbish@icloud.com\",\n      \"id\": \"89495985-7885-49e4-bcc1-af72d7b70dd0\"\n    },\n    \"vehicle\": {\n      \"make\": \"Toyota\",\n      \"model\": \"Corolla\",\n      \"plateNumber\": \"RAA111B\",\n      \"features\": [],\n      \"id\": \"5d078c2d-f6f8-455a-91e8-075450801fec\",\n      \"parkingSlot\": {\n        \"id\": \"16600d25-00c0-4d45-8c70-13cf5315ee6f\",\n        \"name\": \"Parking Slot 1\",\n        \"slotNumber\": 1\n      }\n    },\n    \"id\": \"cfcb1e8e-c004-4754-bf26-fe0544abbcb4\"\n  }\n]"
+            },
+            {
+              "name": "B2 - GET rentals by status",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8084/api/rentals/by-status?status=CANCELLED",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8084",
+                  "path": [
+                    "api",
+                    "rentals",
+                    "by-status"
+                  ],
+                  "query": [
+                    {
+                      "key": "status",
+                      "value": "CANCELLED"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 29 Oct 2026 21:05:07 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n  {\n    \"pickupDate\": \"2026-10-20\",\n    \"status\": \"CANCELLED\",\n    \"days\": 1,\n    \"dailyRate\": 25000,\n    \"renter\": {\n      \"firstName\": \"Jean\",\n      \"lastName\": \"Karangwa\",\n      \"licenseNumber\": \"DL-RW-556677\",\n      \"phone\": \"0788123456\",\n      \"email\": \"jean.karangwa@yahoo.fr\",\n      \"id\": \"d845e581-ca64-474c-869a-0f38ee7943c4\"\n    },\n    \"vehicle\": {\n      \"make\": \"Toyota\",\n      \"model\": \"Corolla\",\n      \"plateNumber\": \"RAA111B\",\n      \"features\": [],\n      \"id\": \"5d078c2d-f6f8-455a-91e8-075450801fec\",\n      \"parkingSlot\": {\n        \"id\": \"16600d25-00c0-4d45-8c70-13cf5315ee6f\",\n        \"name\": \"Parking Slot 1\",\n        \"slotNumber\": 1\n      }\n    },\n    \"id\": \"8ed41f1c-10e3-4002-a596-045b76111843\"\n  },\n  {\n    \"pickupDate\": \"2026-11-21\",\n    \"status\": \"CANCELLED\",\n    \"days\": 2,\n    \"dailyRate\": 25000,\n    \"renter\": {\n      \"firstName\": \"Grace\",\n      \"lastName\": \"Rukundo\",\n      \"licenseNumber\": \"DL-RW-445566\",\n      \"phone\": \"0788456789\",\n      \"email\": \"grace@gmail.com\",\n      \"id\": \"2e0eb70c-2442-48bb-b1ae-3c5efdb5a1c1\"\n    },\n    \"vehicle\": {\n      \"make\": \"Hyundai\",\n      \"model\": \"Tucson\",\n      \"plateNumber\": \"RAA002A\",\n      \"features\": [],\n      \"id\": \"35631b4d-ee22-410c-b487-c1f383f16299\",\n      \"parkingSlot\": {\n        \"id\": \"56789777-009c-4061-8c4c-85b2506c6cf5\",\n        \"name\": \"Slot 2\",\n        \"slotNumber\": 2\n      }\n    },\n    \"id\": \"d6878fd5-2d79-4c74-a746-a373e7ee17ae\"\n  }\n]"
+            }
+          ]
+        },
+        {
+          "name": "B3 - GET rentals btn dates",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": [
+            {
+              "name": "B3 - GET rentals btn dates",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8084/api/rentals/between?start=2026-10-01&end=2026-10-31 ",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8084",
+                  "path": [
+                    "api",
+                    "rentals",
+                    "between"
+                  ],
+                  "query": [
+                    {
+                      "key": "start",
+                      "value": "2026-10-01"
+                    },
+                    {
+                      "key": "end",
+                      "value": "2026-10-31 "
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 29 Oct 2026 21:21:42 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n  {\n    \"pickupDate\": \"2026-10-12\",\n    \"status\": \"PICKED_UP\",\n    \"days\": 3,\n    \"dailyRate\": 30000,\n    \"renter\": {\n      \"firstName\": \"Jean\",\n      \"lastName\": \"Karangwa\",\n      \"licenseNumber\": \"DL-RW-556677\",\n      \"phone\": \"0788123456\",\n      \"email\": \"jean.karangwa@yahoo.fr\",\n      \"id\": \"d845e581-ca64-474c-869a-0f38ee7943c4\"\n    },\n    \"vehicle\": {\n      \"make\": \"Hyundai\",\n      \"model\": \"Tucson\",\n      \"plateNumber\": \"RAA002A\",\n      \"features\": [],\n      \"id\": \"35631b4d-ee22-410c-b487-c1f383f16299\",\n      \"parkingSlot\": {\n        \"id\": \"56789777-009c-4061-8c4c-85b2506c6cf5\",\n        \"name\": \"Slot 2\",\n        \"slotNumber\": 2\n      }\n    },\n    \"id\": \"9a57452f-d09b-4974-ae2a-8487e1d7872c\"\n  },\n  {\n    \"pickupDate\": \"2026-10-20\",\n    \"status\": \"CANCELLED\",\n    \"days\": 1,\n    \"dailyRate\": 25000,\n    \"renter\": {\n      \"firstName\": \"Jean\",\n      \"lastName\": \"Karangwa\",\n      \"licenseNumber\": \"DL-RW-556677\",\n      \"phone\": \"0788123456\",\n      \"email\": \"jean.karangwa@yahoo.fr\",\n      \"id\": \"d845e581-ca64-474c-869a-0f38ee7943c4\"\n    },\n    \"vehicle\": {\n      \"make\": \"Toyota\",\n      \"model\": \"Corolla\",\n      \"plateNumber\": \"RAA111B\",\n      \"features\": [],\n      \"id\": \"5d078c2d-f6f8-455a-91e8-075450801fec\",\n      \"parkingSlot\": {\n        \"id\": \"16600d25-00c0-4d45-8c70-13cf5315ee6f\",\n        \"name\": \"Parking Slot 1\",\n        \"slotNumber\": 1\n      }\n    },\n    \"id\": \"8ed41f1c-10e3-4002-a596-045b76111843\"\n  },\n  {\n    \"pickupDate\": \"2026-10-20\",\n    \"status\": \"BOOKED\",\n    \"days\": 2,\n    \"dailyRate\": 25000,\n    \"renter\": {\n      \"firstName\": \"Valens\",\n      \"lastName\": \"Karangwa\",\n      \"licenseNumber\": \"DL-RW-446633\",\n      \"phone\": \"0788567690\",\n      \"email\": \"valens@icloud.com\",\n      \"id\": \"e63f1d9b-3bcf-48f1-9d71-1cf9b44be5c4\"\n    },\n    \"vehicle\": {\n      \"make\": \"Toyota\",\n      \"model\": \"Corolla\",\n      \"plateNumber\": \"RAA111B\",\n      \"features\": [],\n      \"id\": \"5d078c2d-f6f8-455a-91e8-075450801fec\",\n      \"parkingSlot\": {\n        \"id\": \"16600d25-00c0-4d45-8c70-13cf5315ee6f\",\n        \"name\": \"Parking Slot 1\",\n        \"slotNumber\": 1\n      }\n    },\n    \"id\": \"e20e1970-da45-4117-876a-2b8e65f45741\"\n  },\n  {\n    \"pickupDate\": \"2026-10-25\",\n    \"status\": \"RETURNED\",\n    \"days\": 4,\n    \"dailyRate\": 30000,\n    \"renter\": {\n      \"firstName\": \"Eric\",\n      \"lastName\": \"Kay\",\n      \"licenseNumber\": \"DL-RW-112233\",\n      \"phone\": \"0788345678\",\n      \"email\": \"eric.kay@yahoo.fr\",\n      \"id\": \"55a7454c-2a83-4861-a26a-8ed5b54cdce7\"\n    },\n    \"vehicle\": {\n      \"make\": \"Hyundai\",\n      \"model\": \"Tucson\",\n      \"plateNumber\": \"RAA002A\",\n      \"features\": [],\n      \"id\": \"35631b4d-ee22-410c-b487-c1f383f16299\",\n      \"parkingSlot\": {\n        \"id\": \"56789777-009c-4061-8c4c-85b2506c6cf5\",\n        \"name\": \"Slot 2\",\n        \"slotNumber\": 2\n      }\n    },\n    \"id\": \"bcdeb0cd-40e5-45c9-83ed-b5c9441c397a\"\n  }\n]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PART C",
+      "item": [
+        {
+          "name": "C1 - GET vehicle by feature",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": [
+            {
+              "name": "C1 - GET vehicle by feature",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8084/api/vehicles/by-feature?name=gps",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8084",
+                  "path": [
+                    "api",
+                    "vehicles",
+                    "by-feature"
+                  ],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "gps"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 30 Oct 2026 17:15:05 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "[]"
+            }
+          ]
+        },
+        {
+          "name": "C2 - GET free parking slots",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": [
+            {
+              "name": "C2 - GET free parking slots",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8084/api/parking-slots/free",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8084",
+                  "path": [
+                    "api",
+                    "parking-slots",
+                    "free"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 30 Oct 2026 17:16:12 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n  {\n    \"id\": \"8cd0e92a-6c44-4da5-9637-2b943068807a\",\n    \"name\": \"Slot 4\",\n    \"slotNumber\": 4\n  },\n  {\n    \"id\": \"fc04b7fa-08ca-438f-972b-0d4306cf2549\",\n    \"name\": \"Slot 5\",\n    \"slotNumber\": 5\n  }\n]"
+            }
+          ]
+        },
+        {
+          "name": "C3 - GET unused features",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": [
+            {
+              "name": "C3 - GET unused features",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8084/api/features/unused",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8084",
+                  "path": [
+                    "api",
+                    "features",
+                    "unused"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 30 Oct 2026 17:34:58 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n  {\n    \"name\": \"GPS\",\n    \"id\": \"6966db66-388f-4a47-b58d-6e546ec71c90\"\n  },\n  {\n    \"name\": \"4 Wheel Drive\",\n    \"id\": \"836fa0ab-4b72-4d6d-86e4-a168ba0ab82e\"\n  },\n  {\n    \"name\": \"Child Seat\",\n    \"id\": \"03a6ae08-72ea-48b0-aef8-8973fc3794d0\"\n  },\n  {\n    \"name\": \"AirCon\",\n    \"id\": \"e9a9f65f-7436-4791-8196-f2224bd96397\"\n  }\n]"
+            }
+          ]
+        },
+        {
+          "name": "C4 - GET renters of vehicle",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": [
+            {
+              "name": "C4 - GET renters of vehicle",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8084/api/renters/of-vehicle/5d078c2d-f6f8-455a-91e8-075450801fec",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8084",
+                  "path": [
+                    "api",
+                    "renters",
+                    "of-vehicle",
+                    "5d078c2d-f6f8-455a-91e8-075450801fec"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 30 Oct 2026 17:39:11 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n  {\n    \"firstName\": \"Flavien\",\n    \"lastName\": \"Mupenzi\",\n    \"licenseNumber\": \"DL-RW-990011\",\n    \"phone\": \"0788567890\",\n    \"email\": \"mbish@icloud.com\",\n    \"id\": \"89495985-7885-49e4-bcc1-af72d7b70dd0\"\n  },\n  {\n    \"firstName\": \"Jean\",\n    \"lastName\": \"Karangwa\",\n    \"licenseNumber\": \"DL-RW-556677\",\n    \"phone\": \"0788123456\",\n    \"email\": \"jean.karangwa@yahoo.fr\",\n    \"id\": \"d845e581-ca64-474c-869a-0f38ee7943c4\"\n  },\n  {\n    \"firstName\": \"Valens\",\n    \"lastName\": \"Karangwa\",\n    \"licenseNumber\": \"DL-RW-446633\",\n    \"phone\": \"0788567690\",\n    \"email\": \"valens@icloud.com\",\n    \"id\": \"e63f1d9b-3bcf-48f1-9d71-1cf9b44be5c4\"\n  }\n]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PART D",
+      "item": [
+        {
+          "name": "D1 - POST date in past",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": [
+            {
+              "name": "D1 - POST date in past",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\"pickupDate\": \"2026-10-01\", \"status\": \"BOOKED\", \"days\": 2, \"dailyRate\": 25000, \"renter\": {\"id\": \"89495985-7885-49e4-bcc1-af72d7b70dd0\"}, \"vehicle\": {\"id\": \"5d078c2d-f6f8-455a-91e8-075450801fec\"}}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8084/api/rentals/save",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8084",
+                  "path": [
+                    "api",
+                    "rentals",
+                    "save"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain;charset=UTF-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "33"
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 30 Oct 2026 21:06:47 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "Rental date cannot be in the past"
+            }
+          ]
+        },
+        {
+          "name": "D1 - POST vehicle already rented",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": [
+            {
+              "name": "D1 - POST vehicle already rented",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\"pickupDate\": \"2026-12-01\", \"status\": \"BOOKED\", \"days\": 2, \"dailyRate\": 25000, \"renter\": {\"id\": \"89495985-7885-49e4-bcc1-af72d7b70dd0\"}, \"vehicle\": {\"id\": \"5d078c2d-f6f8-455a-91e8-075450801fec\"}}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8084/api/rentals/save",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8084",
+                  "path": [
+                    "api",
+                    "rentals",
+                    "save"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain;charset=UTF-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "38"
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 30 Oct 2026 21:08:19 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "Vehicle is already rented on that date"
+            }
+          ]
+        },
+        {
+          "name": "D1 - POST status is 'BOOKED'",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": [
+            {
+              "name": "D1 - POST status is 'BOOKED'",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\"pickupDate\": \"2026-12-06\", \"status\": \"PICKED_UP\", \"days\": 1, \"dailyRate\": 25000, \"renter\": {\"id\": \"89495985-7885-49e4-bcc1-af72d7b70dd0\"}, \"vehicle\": {\"id\": \"5d078c2d-f6f8-455a-91e8-075450801fec\"}}\r\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8084/api/rentals/save",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8084",
+                  "path": [
+                    "api",
+                    "rentals",
+                    "save"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain;charset=UTF-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "25"
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 30 Oct 2026 21:12:15 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "Rental saved successfully"
+            },
+            {
+              "name": "D1 - POST status is 'BOOKED'",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\"pickupDate\": \"2026-12-06\", \"status\": \"PICKED_UP\", \"days\": 1, \"dailyRate\": 25000, \"renter\": {\"id\": \"89495985-7885-49e4-bcc1-af72d7b70dd0\"}, \"vehicle\": {\"id\": \"5d078c2d-f6f8-455a-91e8-075450801fec\"}}\r\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8084/api/rentals/b66b0504-9808-4e40-a1f3-ab6b4b9fc59e",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8084",
+                  "path": [
+                    "api",
+                    "rentals",
+                    "b66b0504-9808-4e40-a1f3-ab6b4b9fc59e"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 30 Oct 2026 21:14:40 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"pickupDate\": \"2026-12-06\",\n  \"status\": \"BOOKED\",\n  \"days\": 1,\n  \"dailyRate\": 25000,\n  \"renter\": {\n    \"firstName\": \"Flavien\",\n    \"lastName\": \"Mupenzi\",\n    \"licenseNumber\": \"DL-RW-990011\",\n    \"phone\": \"0788567890\",\n    \"email\": \"mbish@icloud.com\",\n    \"id\": \"89495985-7885-49e4-bcc1-af72d7b70dd0\"\n  },\n  \"vehicle\": {\n    \"make\": \"Toyota\",\n    \"model\": \"Corolla\",\n    \"plateNumber\": \"RAA111B\",\n    \"features\": [],\n    \"id\": \"5d078c2d-f6f8-455a-91e8-075450801fec\",\n    \"parkingSlot\": {\n      \"id\": \"16600d25-00c0-4d45-8c70-13cf5315ee6f\",\n      \"name\": \"Parking Slot 1\",\n      \"slotNumber\": 1\n    }\n  },\n  \"id\": \"b66b0504-9808-4e40-a1f3-ab6b4b9fc59e\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "D2 - PATCH status to valid",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": [
+            {
+              "name": "D2 - PATCH status to valid",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8084/api/rentals/8ed41f1c-10e3-4002-a596-045b76111843/status?status=PICKED_UP",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8084",
+                  "path": [
+                    "api",
+                    "rentals",
+                    "8ed41f1c-10e3-4002-a596-045b76111843",
+                    "status"
+                  ],
+                  "query": [
+                    {
+                      "key": "status",
+                      "value": "PICKED_UP"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain;charset=UTF-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "48"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sat, 31 Oct 2026 16:18:20 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "Cannot change status from CANCELLED to PICKED_UP"
+            }
+          ]
+        },
+        {
+          "name": "D2 - PATCH status to valid",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": [
+            {
+              "name": "D2 - PATCH status to valid",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8084/api/rentals/e20e1970-da45-4117-876a-2b8e65f45741/status?status=PICKED_UP",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8084",
+                  "path": [
+                    "api",
+                    "rentals",
+                    "e20e1970-da45-4117-876a-2b8e65f45741",
+                    "status"
+                  ],
+                  "query": [
+                    {
+                      "key": "status",
+                      "value": "PICKED_UP"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain;charset=UTF-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "34"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sat, 31 Oct 2026 16:20:59 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "Rental status updated successfully"
+            }
+          ]
+        },
+        {
+          "name": "D3 - PUT feature to vehicle",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": [
+            {
+              "name": "D3 - PUT feature to vehicle",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8084/api/vehicles/5d078c2d-f6f8-455a-91e8-075450801fec/features/6966db66-388f-4a47-b58d-6e546ec71c90",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8084",
+                  "path": [
+                    "api",
+                    "vehicles",
+                    "5d078c2d-f6f8-455a-91e8-075450801fec",
+                    "features",
+                    "6966db66-388f-4a47-b58d-6e546ec71c90"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain;charset=UTF-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "28"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sat, 31 Oct 2026 16:27:30 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "Feature added to the vehicle"
+            }
+          ]
+        },
+        {
+          "name": "D4 - PATCH change parking-slot",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": [
+            {
+              "name": "D4 - PATCH change parking-slot",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8084/api/vehicles/5d078c2d-f6f8-455a-91e8-075450801fec/parking-slot?slotNumber=3",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8084",
+                  "path": [
+                    "api",
+                    "vehicles",
+                    "5d078c2d-f6f8-455a-91e8-075450801fec",
+                    "parking-slot"
+                  ],
+                  "query": [
+                    {
+                      "key": "slotNumber",
+                      "value": "3"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain;charset=UTF-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "45"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sat, 31 Oct 2026 17:32:51 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "That parking slot is taken by another vehicle"
+            },
+            {
+              "name": "D4 - PATCH change parking-slot",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8084/api/vehicles/5d078c2d-f6f8-455a-91e8-075450801fec/parking-slot?slotNumber=5",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8084",
+                  "path": [
+                    "api",
+                    "vehicles",
+                    "5d078c2d-f6f8-455a-91e8-075450801fec",
+                    "parking-slot"
+                  ],
+                  "query": [
+                    {
+                      "key": "slotNumber",
+                      "value": "5"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain;charset=UTF-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "33"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sat, 31 Oct 2026 17:34:29 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "Parking slot changed successfully"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PART E",
+      "item": [
+        {
+          "name": "E1 - POST rental charge",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": [
+            {
+              "name": "E1 - POST rental charge",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\"chargeName\": \"Fuel refill\", \"description\": \"Returned with a quarter tank\", \"amount\": 25000}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8084/api/rental-charges/save?rentalId=9a57452f-d09b-4974-ae2a-8487e1d7872c",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8084",
+                  "path": [
+                    "api",
+                    "rental-charges",
+                    "save"
+                  ],
+                  "query": [
+                    {
+                      "key": "rentalId",
+                      "value": "9a57452f-d09b-4974-ae2a-8487e1d7872c"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain;charset=UTF-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "44"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 01 Nov 2026 10:20:29 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "cookie": [],
+              "body": "Rental charges are only for RETURNED rentals"
+            }
+          ]
+        },
+        {
+          "name": "E1 - POST rental charges",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": [
+            {
+              "name": "E1 - POST rental charges",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\"chargeName\": \"Fuel refill\", \"description\": \"Returned with a quarter tank\", \"amount\": 25000}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8084/api/rental-charges/save?rentalId=bcdeb0cd-40e5-45c9-83ed-b5c9441c397a",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8084",
+                  "path": [
+                    "api",
+                    "rental-charges",
+                    "save"
+                  ],
+                  "query": [
+                    {
+                      "key": "rentalId",
+                      "value": "bcdeb0cd-40e5-45c9-83ed-b5c9441c397a"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain;charset=UTF-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "32"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 01 Nov 2026 10:22:37 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "Rental charge saved successfully"
+            }
+          ]
+        },
+        {
+          "name": "E1 - POST rental charges",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": [
+            {
+              "name": "E1 - POST rental charges",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\"chargeName\": \"Fuel refill\", \"description\": \"Returned with a quarter tank\", \"amount\": 25000}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8084/api/rental-charges/save?rentalId=bcdeb0cd-40e5-45c9-83ed-b5c9441c3956",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8084",
+                  "path": [
+                    "api",
+                    "rental-charges",
+                    "save"
+                  ],
+                  "query": [
+                    {
+                      "key": "rentalId",
+                      "value": "bcdeb0cd-40e5-45c9-83ed-b5c9441c3956"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain;charset=UTF-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "38"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 01 Nov 2026 10:23:53 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "The rental with that id does not exist"
+            }
+          ]
+        },
+        {
+          "name": "E2 - GET renter charge history",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": [
+            {
+              "name": "E2 - GET renter charge history",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8084/api/rental-charges/renter/DL-RW-112233",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8084",
+                  "path": [
+                    "api",
+                    "rental-charges",
+                    "renter",
+                    "DL-RW-112233"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 01 Nov 2026 10:30:30 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n  {\n    \"amount\": 25000,\n    \"chargeName\": \"Fuel refill\",\n    \"chargedDate\": \"2026-11-01\",\n    \"description\": \"Returned with a quarter tank\",\n    \"id\": \"14d9ceed-0fd8-4eca-8afe-55be624d164c\",\n    \"rental\": {\n      \"pickupDate\": \"2026-10-25\",\n      \"status\": \"RETURNED\",\n      \"days\": 4,\n      \"dailyRate\": 30000,\n      \"renter\": {\n        \"firstName\": \"Eric\",\n        \"lastName\": \"Kay\",\n        \"licenseNumber\": \"DL-RW-112233\",\n        \"phone\": \"0788345678\",\n        \"email\": \"eric.kay@yahoo.fr\",\n        \"id\": \"55a7454c-2a83-4861-a26a-8ed5b54cdce7\"\n      },\n      \"vehicle\": {\n        \"make\": \"Hyundai\",\n        \"model\": \"Tucson\",\n        \"plateNumber\": \"RAA002A\",\n        \"features\": [],\n        \"id\": \"35631b4d-ee22-410c-b487-c1f383f16299\",\n        \"parkingSlot\": {\n          \"id\": \"56789777-009c-4061-8c4c-85b2506c6cf5\",\n          \"name\": \"Slot 2\",\n          \"slotNumber\": 2\n        }\n      },\n      \"id\": \"bcdeb0cd-40e5-45c9-83ed-b5c9441c397a\"\n    }\n  }\n]"
+            }
+          ]
+        },
+        {
+          "name": "E2 - GET renter charge history",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": [
+            {
+              "name": "E2 - GET renter charge history",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8084/api/rental-charges/renter/DL-RW-556677",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8084",
+                  "path": [
+                    "api",
+                    "rental-charges",
+                    "renter",
+                    "DL-RW-556677"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 01 Nov 2026 10:30:51 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "[]"
+            }
+          ]
+        },
+        {
+          "name": "E3 - DELETE rental charge",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": [
+            {
+              "name": "E3 - DELETE rental charge",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8084/api/rental-charges/delete/14d9ceed-0fd8-4eca-8afe-55be624d1641",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8084",
+                  "path": [
+                    "api",
+                    "rental-charges",
+                    "delete",
+                    "14d9ceed-0fd8-4eca-8afe-55be624d1641"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain;charset=UTF-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "45"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 01 Nov 2026 10:34:27 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "The rental charge with that id does not exist"
+            }
+          ]
+        },
+        {
+          "name": "E3 - DELETE rental with charges",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": [
+            {
+              "name": "E3 - DELETE rental with charges",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8084/api/rentals/delete/bcdeb0cd-40e5-45c9-83ed-b5c9441c397a",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8084",
+                  "path": [
+                    "api",
+                    "rentals",
+                    "delete",
+                    "bcdeb0cd-40e5-45c9-83ed-b5c9441c397a"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain;charset=UTF-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "49"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 01 Nov 2026 10:37:54 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "That rental has rental charges, delete them first"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PART F",
+      "item": [
+        {
+          "name": "F1 - GET stats by status",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": [
+            {
+              "name": "F1 - GET stats by status",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8084/api/rentals/stats/by-status",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8084",
+                  "path": [
+                    "api",
+                    "rentals",
+                    "stats",
+                    "by-status"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 01 Nov 2026 11:16:14 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n  [\n    \"RETURNED\",\n    2\n  ],\n  [\n    \"PICKED_UP\",\n    3\n  ],\n  [\n    \"BOOKED\",\n    4\n  ],\n  [\n    \"CANCELLED\",\n    2\n  ]\n]"
+            }
+          ]
+        },
+        {
+          "name": "F2 - PATCH cancel day",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": [
+            {
+              "name": "F2 - PATCH cancel day",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8084/api/rentals/cancel-day?vehicleId=153fafac-4308-4397-a12d-f856ca8c8833&date=2026-10-20",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8084",
+                  "path": [
+                    "api",
+                    "rentals",
+                    "cancel-day"
+                  ],
+                  "query": [
+                    {
+                      "key": "vehicleId",
+                      "value": "153fafac-4308-4397-a12d-f856ca8c8833"
+                    },
+                    {
+                      "key": "date",
+                      "value": "2026-10-20"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain;charset=UTF-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "19"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 01 Nov 2026 11:26:44 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "0 rentals cancelled"
+            },
+            {
+              "name": "F2 - PATCH cancel day",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8084/api/rentals/cancel-day?vehicleId=153fafac-4308-4397-a12d-f856ca8c8833&date=2026-11-28",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8084",
+                  "path": [
+                    "api",
+                    "rentals",
+                    "cancel-day"
+                  ],
+                  "query": [
+                    {
+                      "key": "vehicleId",
+                      "value": "153fafac-4308-4397-a12d-f856ca8c8833"
+                    },
+                    {
+                      "key": "date",
+                      "value": "2026-11-28"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain;charset=UTF-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "19"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 01 Nov 2026 11:27:32 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "1 rentals cancelled"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "BONUS",
+      "item": [
+        {
+          "name": "+5 - GET dashboard summary",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": [
+            {
+              "name": "+5 - GET dashboard summary",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8084/api/dashboard/summary",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8084",
+                  "path": [
+                    "api",
+                    "dashboard",
+                    "summary"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 01 Nov 2026 11:59:55 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"renters\": 5,\n  \"vehicles\": 3,\n  \"freeSlots\": 2,\n  \"rentalsToday\": 0,\n  \"booked\": 3,\n  \"charges\": 1\n}"
             }
           ]
         }
