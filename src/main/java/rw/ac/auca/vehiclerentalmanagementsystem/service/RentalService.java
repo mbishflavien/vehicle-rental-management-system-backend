@@ -23,6 +23,9 @@ public class RentalService {
     @Autowired
     private VehicleRepository vehicleRepository;
 
+    @Autowired
+    private RentalChargeService rentalChargeService;
+
 
     // CREATE
     public String saveRental(Rental rental) {
@@ -93,7 +96,9 @@ public class RentalService {
         if (existing.isEmpty()) {
             return "The rental with that id does not exist";
         }
-
+        if(rentalChargeService.hasCharges(id)){
+            return "That rental has rental charges, delete them first";
+        }
         rentalRepository.delete(existing.get());
         return "Rental deleted successfully";
     }

@@ -68,6 +68,8 @@ public class RentalController {
             return new ResponseEntity<>(returnedMessage, HttpStatus.OK);
         } else if (returnedMessage.equals("The rental with that id does not exist")) {
             return new ResponseEntity<>(returnedMessage, HttpStatus.NOT_FOUND);
+        }else if(returnedMessage.equals("That rental has rental charges, delete them first")) {
+            return new ResponseEntity<>(returnedMessage, HttpStatus.CONFLICT);
         } else {
             return new ResponseEntity<>(returnedMessage, HttpStatus.CONFLICT);
         }
