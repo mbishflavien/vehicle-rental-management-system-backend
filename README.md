@@ -16,7 +16,7 @@
 3. **Run the Application:**
    - Open a terminal in the project root directory.
    - Run the following command:
-     ```bash
+     ```
      ./mvnw spring-boot:run
      ```
    - The API will start on port `8084` by default.
